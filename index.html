@@ -4,220 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divino José | Gestão & Soluções</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #001f3f; /* Azul Marinho Obsidiana */
             --accent: #D4AF37;  /* Ouro Metálico */
-            --bg-light: #f8f9fa;
-            --white: #ffffff;
+            --text: #333;
+            --light: #f4f4f4;
         }
-
-        * { box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-
-        /* Menu de Navegação */
-        nav {
-            background: var(--primary);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            border-bottom: 2px solid var(--accent);
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
+            color: var(--text);
+            background-color: #fff;
+            line-height: 1.6;
         }
 
         header {
             background-color: var(--primary);
             color: white;
-            padding: 4rem 1rem;
+            padding: 2rem 1rem;
             text-align: center;
+            border-bottom: 5px solid var(--accent);
         }
 
+        .logo-container {
+            margin-bottom: 1rem;
+        }
+
+        /* Estilo para a sua logo personalizada */
         .logo-img {
-            max-width: 150px;
+            max-width: 180px;
+            height: auto;
             border: 2px solid var(--accent);
             border-radius: 10px;
             background: white;
-            padding: 10px;
-            margin-bottom: 1.5rem;
+            padding: 5px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: auto;
-            padding: 3rem 1.5rem;
+            padding: 2rem;
         }
 
-        section { margin-bottom: 4rem; }
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+        h2 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
 
-        h2 { 
-            color: var(--primary); 
-            text-align: center; 
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: 10px auto;
-        }
-
-        /* Cards de Serviços */
-        .grid {
+        .servicos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .card {
-            background: var(--bg-light);
-            padding: 30px;
-            border-radius: 8px;
-            border-bottom: 4px solid var(--accent);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: var(--light);
+            padding: 20px;
+            border-left: 5px solid var(--accent);
+            transition: transform 0.3s;
         }
 
-        /* Seção Sobre com Foto */
-        .sobre-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
+        .card:hover { transform: translateY(-5px); }
 
-        .sobre-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-
-        .sobre-image img {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 10px;
-            border: 3px solid var(--accent);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .sobre-text { 
-            flex: 1; 
-            min-width: 300px; 
-            font-size: 1.1rem; 
-            line-height: 1.8;
-        }
-
-        /* Botão WhatsApp Flutuante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 15px 30px;
             text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 1.1rem;
         }
 
         footer {
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 3rem;
+            padding: 2rem;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="#inicio">Início</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-</nav>
-
-<header id="inicio">
-    <img src="logo.png" alt="Logo Divino Soluções" class="logo-img">
+<header>
+    <div class="logo-container">
+        <img src="logo.png" alt="Divino José Gestão & Soluções" class="logo-img">
+    </div>
     <h1>DIVINO JOSÉ</h1>
-    <p>Consultoria em Administração & Recursos Humanos</p>
+    <p>Gestão & Soluções Acadêmicas e Empresariais</p>
 </header>
 
 <div class="container">
-    
-    <section id="servicos">
-        <h2>Nossos Serviços</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>📚 Apoio Acadêmico</h3>
-                <p>Suporte em pesquisas, formatação ABNT e orientação especializada para estudantes de Administração.</p>
-            </div>
-            <div class="card">
-                <h3>👥 Gestão de Pessoas</h3>
-                <p>Consultoria em recrutamento, seleção e estruturação de processos de RH para pequenos negócios.</p>
-            </div>
-            <div class="card">
-                <h3>📊 Processos Adm</h3>
-                <p>Otimização de rotinas, organização de documentos e melhoria da produtividade administrativa.</p>
-            </div>
-        </div>
-    </section>
+    <h2>Consultoria Especializada em Administração e RH</h2>
+    <p>Transformando processos e potencializando resultados através de estratégias modernas de gestão.</p>
 
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <div class="sobre-content">
-            <div class="sobre-image">
-                <img src="perfil.jpg" alt="Divino José Silva Mota">
-            </div>
-            <div class="sobre-text">
-                <p>Olá! Sou <strong>Divino José</strong>, graduando em Administração e focado em soluções para Recursos Humanos. Minha missão é simplificar processos administrativos e acadêmicos, trazendo inteligência e eficiência para o seu dia a dia.</p>
-                <p>Com uma visão moderna de gestão, busco auxiliar profissionais, empresas e estudantes a organizarem suas rotinas para alcançarem resultados de alto impacto.</p>
-            </div>
+    <div class="servicos">
+        <div class="card">
+            <h3>Soluções Acadêmicas</h3>
+            <p>Auxílio em pesquisas, formatação e suporte especializado para estudantes de Administração e RH.</p>
         </div>
-    </section>
+        <div class="card">
+            <h3>Gestão de Pessoas</h3>
+            <p>Consultoria em processos seletivos, treinamento e desenvolvimento de talentos.</p>
+        </div>
+        <div class="card">
+            <h3>Eficiência Operacional</h3>
+            <p>Análise de processos e implementação de melhorias administrativas para pequenos negócios.</p>
+        </div>
+    </div>
 
+    <div style="text-align: center;">
+        <a href="https://wa.me/5561995807599" class="cta-button">Solicitar Orçamento via WhatsApp</a>
+    </div>
 </div>
 
-<footer id="contato">
-    <h3>Entre em Contato</h3>
-    <p>📍 Santo Antônio do Descoberto - GO / Brasília</p>
-    <p>📞 (61) 99580-7599</p>
-    <p>✉️ divinojosesilvamota.adm@gmail.com</p>
-    <br>
-    <p>&copy; 2026 Divino Soluções. Profissionalismo e Ética.</p>
+<footer>
+    <p>&copy; 2026 Divino Soluções - Todos os direitos reservados.</p>
+    <p>Santo Antônio do Descoberto - GO | Contato: (61) 99580-7599</p>
 </footer>
-
-<a href="https://wa.me/5561995807599" class="whatsapp-float" target="_blank" title="Fale comigo no WhatsApp">
-    <span>📲</span>
-</a>
 
 </body>
 </html>
