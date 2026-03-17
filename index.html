@@ -70,7 +70,6 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.05);
         }
 
-        /* Perfil Section Styles */
         .profile-section {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -188,7 +187,7 @@
         <div class="glass-card">
             <div class="profile-section">
                 <div class="profile-img-container">
-                    <img src="perfil.png.jpg" alt="Divino José em seu escritório">
+                    <img src="perfil.jpg" alt="Divino José em seu escritório">
                 </div>
                 
                 <div>
@@ -306,17 +305,14 @@
     <div id="modalRH" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('modalRH')">&times;</span><h2>Carreira & RH</h2><p>Otimização de currículo e LinkedIn estratégico.</p><br><a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20melhorar%20meu%20curr%C3%ADculo." class="btn-main">Alavancar Perfil</a></div></div>
 
     <script>
-        // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
         });
 
-        // Modal Controls
         function openModal(id) { document.getElementById(id).style.display = 'flex'; document.body.style.overflow = 'hidden'; }
         function closeModal(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = 'auto'; }
         window.onclick = function(e) { if (e.target.classList.contains('modal')) { e.target.style.display = 'none'; document.body.style.overflow = 'auto'; } }
         
-        // Copy PIX function
         function copyPix() {
             const cpf = "71551137194";
             navigator.clipboard.writeText(cpf).then(() => {
