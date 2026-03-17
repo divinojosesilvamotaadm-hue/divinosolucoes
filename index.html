@@ -32,7 +32,7 @@
         h2 { color: var(--primary); text-align: center; font-size: 2rem; margin-bottom: 3rem; position: relative; }
         h2::after { content: ''; display: block; width: 50px; height: 4px; background: var(--accent); margin: 10px auto; }
 
-        /* Sobre Mim com Foto */
+        /* Sobre Mim com Sua Foto */
         .sobre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center; background: var(--bg-light); padding: 30px; border-radius: 20px; }
         .sobre-foto img { width: 100%; border-radius: 15px; border: 4px solid var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .sobre-texto h3 { color: var(--primary); font-size: 1.5rem; }
@@ -42,19 +42,19 @@
 
         /* Grade de Especialidades */
         .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; border: 1px solid #ddd; padding: 30px; border-radius: 15px; transition: 0.3s; border-top: 5px solid var(--accent); }
+        .card { background: white; border: 1px solid #ddd; padding: 30px; border-radius: 15px; transition: 0.3s; border-top: 5px solid var(--accent); display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .price { display: block; font-size: 1.3rem; font-weight: 800; color: var(--primary); margin: 15px 0; }
+        .price { display: block; font-size: 1.2rem; font-weight: 800; color: var(--primary); margin: 15px 0; }
         .btn-detalhes { font-size: 0.8rem; color: var(--accent); font-weight: bold; text-decoration: none; text-transform: uppercase; }
 
-        /* Dúvidas / FAQ */
+        /* FAQ */
         .faq { background: var(--primary); color: white; border-radius: 20px; padding: 40px; }
         .faq-item { margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
         .faq-item strong { color: var(--accent); display: block; margin-bottom: 5px; }
 
         /* Pagamento e CTA */
         .pagamento { text-align: center; background: #fdf8e6; padding: 40px; border-radius: 20px; border: 2px dashed var(--accent); }
-        .pix-box { font-size: 1.5rem; font-weight: 800; color: var(--primary); margin: 20px 0; background: white; padding: 10px; display: inline-block; border-radius: 8px; }
+        .pix-box { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin: 20px 0; background: white; padding: 10px 20px; display: inline-block; border-radius: 8px; border: 1px solid var(--accent); }
         .btn-whatsapp { display: inline-block; background: var(--success); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.1rem; margin-top: 20px; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
 
         footer { background: var(--primary); color: white; text-align: center; padding: 3rem 1rem; margin-top: 4rem; }
@@ -85,7 +85,7 @@
             <div class="sobre-texto">
                 <h2>Execução com Excelência</h2>
                 <p>Sou o <strong>Divino José</strong>, consultor independente focado em resolver gargalos operacionais e acadêmicos.</p>
-                <p>Unindo minha formação em <strong>Administração e RH</strong> com visão técnica, entrego soluções que economizam seu tempo e garantem sua aprovação.</p>
+                <p>Unindo minha formação em <strong>Administração e RH</strong> com visão técnica, entrego soluções que economizam seu tempo e garantem resultados de alto nível.</p>
                 <ul class="diferenciais">
                     <li>Entrega em tempo recorde</li>
                     <li>Soluções Tech personalizadas</li>
@@ -99,39 +99,51 @@
         <h2>Especialidades</h2>
         <div class="grid-servicos">
             <div class="card">
-                <h3>Acadêmico & ABNT</h3>
-                <p>TCCs, Artigos e Formatação completa conforme normas vigentes.</p>
-                <span class="price">A partir de R$ 50,00</span>
+                <div>
+                    <h3>Acadêmico & ABNT</h3>
+                    <p>TCCs, Artigos e Formatação completa conforme normas vigentes.</p>
+                    <span class="price">A partir de R$ 50,00</span>
+                </div>
                 <a href="https://wa.me/5561995807599" class="btn-detalhes">Ver Detalhes →</a>
             </div>
             <div class="card">
-                <h3>Excel & Automação</h3>
-                <p>Dashboards financeiros e automação de processos em massa.</p>
-                <span class="price">A partir de R$ 80,00</span>
+                <div>
+                    <h3>Excel & Automação</h3>
+                    <p>Dashboards financeiros e automação de processos em massa.</p>
+                    <span class="price">A partir de R$ 80,00</span>
+                </div>
                 <a href="https://wa.me/5561995807599" class="btn-detalhes">Ver Detalhes →</a>
             </div>
             <div class="card">
-                <h3>Bio-Link Elite</h3>
-                <p>Páginas personalizadas em HTML para o seu Instagram.</p>
-                <span class="price">A partir de R$ 120,00</span>
+                <div>
+                    <h3>Bio-Link Elite</h3>
+                    <p>Páginas personalizadas em HTML para o seu Instagram.</p>
+                    <span class="price">A partir de R$ 120,00</span>
+                </div>
                 <a href="https://wa.me/5561995807599" class="btn-detalhes">Ver Detalhes →</a>
             </div>
             <div class="card">
-                <h3>Onboarding Digital</h3>
-                <p>Manual de integração digital para novos funcionários.</p>
-                <span class="price">Sob Consulta</span>
+                <div>
+                    <h3>Onboarding Digital</h3>
+                    <p>Manual de integração digital para novos funcionários.</p>
+                    <span class="price">Sob Consulta</span>
+                </div>
                 <a href="https://wa.me/5561995807599" class="btn-detalhes">Ver Detalhes →</a>
             </div>
             <div class="card">
-                <h3>Gestão de Estoque</h3>
-                <p>Mapeamento de processos e controle de perdas logísticas.</p>
-                <span class="price">Consultar</span>
+                <div>
+                    <h3>Gestão de Estoque</h3>
+                    <p>Mapeamento de processos e controle de perdas logísticas.</p>
+                    <span class="price">Consultar</span>
+                </div>
                 <a href="https://wa.me/5561995807599" class="btn-detalhes">Ver Detalhes →</a>
             </div>
             <div class="card">
-                <h3>Carreira & RH</h3>
-                <p>Revisão de currículo e LinkedIn focado em algoritmos.</p>
-                <span class="price">Consultar</span>
+                <div>
+                    <h3>Carreira & RH</h3>
+                    <p>Revisão de currículo e LinkedIn focado em algoritmos.</p>
+                    <span class="price">Consultar</span>
+                </div>
                 <a href="https://wa.me/5561995807599" class="btn-detalhes">Ver Detalhes →</a>
             </div>
         </div>
@@ -155,7 +167,7 @@
 
     <section id="pagamento" class="pagamento">
         <h2>Pronto para resolver sua demanda?</h2>
-        <p>Realize o pagamento de forma segura via PIX:</p>
+        <p>Pagamento rápido e seguro via PIX:</p>
         <div class="pix-box">715.511.371-94</div>
         <p><strong>Favorecido:</strong> Divino José Silva Mota</p>
         <br>
