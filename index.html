@@ -54,13 +54,15 @@
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
+        /* LOGO BOX COM A SUA IMAGEM */
         .logo-box {
             width: 110px; height: 110px; background: white; border-radius: 25px;
             margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
             border: 3px solid var(--accent); transform: rotate(-3deg);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
         }
-        .logo-box img { max-width: 75%; }
+        .logo-box img { max-width: 85%; height: auto; object-fit: contain; }
 
         .logo-text {
             font-family: 'Montserrat'; font-size: clamp(30px, 5vw, 45px); font-weight: 800;
@@ -85,12 +87,11 @@
             border: 1px solid rgba(255,255,255,0.05); display: grid; 
             grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center;
         }
-        .profile-img { border-radius: 20px; width: 100%; border: 1px solid var(--accent); filter: grayscale(20%); transition: 0.5s; }
-        .profile-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+        .profile-img { border-radius: 20px; width: 100%; border: 1px solid var(--accent); transition: 0.5s; }
+        .profile-img:hover { transform: scale(1.02); }
 
         .section-header { text-align: center; margin-bottom: 40px; margin-top: 60px; }
         .section-header h2 { font-family: 'Montserrat'; color: var(--accent); font-size: 2.2rem; text-transform: uppercase; }
-        .section-header p { color: var(--text-muted); margin-top: 10px; }
 
         .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
         
@@ -99,7 +100,7 @@
             border: 1px solid rgba(255,255,255,0.05); transition: 0.4s;
             display: flex; flex-direction: column; position: relative;
         }
-        .card:hover { transform: translateY(-10px); border-color: var(--accent); background: rgba(30, 41, 59, 0.8); }
+        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
         .card.featured { border: 2px solid var(--accent); background: rgba(197, 160, 89, 0.05); }
 
         .card i { font-size: 35px; color: var(--accent); margin-bottom: 20px; }
@@ -119,9 +120,7 @@
             font-family: 'Montserrat'; text-transform: uppercase; font-size: 0.85rem;
         }
         .btn-gold { background: var(--accent); color: var(--primary); }
-        .btn-gold:hover { background: var(--accent-hover); transform: scale(1.02); }
         .btn-outline { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
-        .btn-outline:hover { background: rgba(197, 160, 89, 0.1); }
         .btn-insta { background: linear-gradient(45deg, #f09433, #e1306c, #bc1888); color: white; }
 
         /* MODAL */
@@ -156,39 +155,34 @@
         .faq-container { max-width: 800px; margin: 40px auto; }
         .faq-item { margin-bottom: 15px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); overflow: hidden; }
         .faq-q { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700; transition: 0.3s; }
-        .faq-q:hover { background: rgba(255,255,255,0.05); }
-        .faq-a { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.4s; color: var(--text-muted); font-size: 0.95rem; }
+        .faq-a { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.4s; color: var(--text-muted); }
         .faq-item.active .faq-a { padding: 0 20px 20px; max-height: 200px; }
-        .faq-item.active .faq-q i { transform: rotate(180deg); color: var(--accent); }
 
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .t-item { background: var(--card-bg); padding: 25px; border-radius: 20px; border-left: 4px solid var(--accent); font-style: italic; }
+        .t-item { background: var(--card-bg); padding: 25px; border-radius: 20px; border-left: 4px solid var(--accent); }
 
-        .cta-box { text-align: center; background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border: 1px solid var(--success); border-radius: 30px; padding: 50px 20px; margin-top: 60px; box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1); }
+        .cta-box { text-align: center; background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border: 1px solid var(--success); border-radius: 30px; padding: 50px 20px; margin-top: 60px; }
         .pix-area { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 15px; display: inline-flex; gap: 15px; align-items: center; margin: 20px 0; border: 2px dashed var(--success); }
 
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: var(--success); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: 0.3s; }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         footer { text-align: center; padding: 60px 40px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 80px; }
 
         @media (max-width: 768px) {
-            .profile-card { grid-template-columns: 1fr; text-align: center; padding: 25px; }
+            .profile-card { grid-template-columns: 1fr; text-align: center; }
             .price-card.featured-modal { transform: scale(1); margin: 10px 0; }
             .modal-content { padding: 40px 15px; }
-            .logo-text { font-size: 28px; }
         }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/5561995807599" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/5561995807599" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <header>
         <div class="logo-box">
-            <i class="fas fa-bolt" style="font-size: 50px; color: var(--primary);"></i>
+            <img src="logo.png" alt="Logo Divino Soluções">
         </div>
         <h1 class="logo-text">Divino Soluções</h1>
         <p style="color: var(--accent); font-weight: 600; letter-spacing: 1px; margin-top: 10px;">Gestão Administrativa, Inteligência Artificial e Consultoria Estratégica</p>
@@ -211,14 +205,13 @@
                 <ul style="list-style: none; color: var(--text-muted);">
                     <li style="margin-bottom: 8px;"><i class="fas fa-envelope" style="color: var(--accent);"></i> gestao.divinosolucoes@gmail.com</li>
                     <li style="margin-bottom: 8px;"><i class="fab fa-instagram" style="color: var(--instagram);"></i> @divino_solucoes.br</li>
-                    <li><i class="fas fa-shield-alt" style="color: var(--success);"></i> Garantia de Confidencialidade (LGPD)</li>
+                    <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Sigilo absoluto e conformidade com LGPD</li>
                 </ul>
             </div>
         </div>
 
         <div class="section-header reveal">
             <h2>Como Funciona</h2>
-            <p>Processo simples e transparente do início ao fim.</p>
         </div>
         <div class="process-grid reveal">
             <div class="process-step">
@@ -228,13 +221,13 @@
             </div>
             <div class="process-step">
                 <div class="step-num">02</div>
-                <h4>Desenvolvimento</h4>
-                <p>Execução técnica focada em produtividade e normas (ABNT/Excel/IA).</p>
+                <h4>Execução</h4>
+                <p>Desenvolvimento técnico com foco em normas e produtividade.</p>
             </div>
             <div class="process-step">
                 <div class="step-num">03</div>
-                <h4>Entrega & Suporte</h4>
-                <p>Você recebe o material pronto com direito a ajustes e orientações.</p>
+                <h4>Entrega</h4>
+                <p>Recebimento do material pronto com suporte para dúvidas.</p>
             </div>
         </div>
 
@@ -246,138 +239,93 @@
             <div class="card">
                 <i class="fab fa-instagram" style="color: var(--instagram);"></i>
                 <h3>Siga no Instagram</h3>
-                <p>Acompanhe dicas de gestão, automação e bastidores dos projetos.</p>
-                <span class="price-tag">Conteúdo Gratuito</span>
+                <p>Dicas de gestão, automação e bastidores dos projetos.</p>
+                <span class="price-tag">Grátis</span>
                 <a href="https://www.instagram.com/divino_solucoes.br" target="_blank" class="btn btn-insta">Seguir Agora</a>
             </div>
 
             <div class="card featured">
                 <i class="fas fa-robot"></i>
                 <h3>IA & Produtividade</h3>
-                <p>Implementação de Inteligência Artificial para acelerar sua rotina de trabalho.</p>
+                <p>Implementação de Inteligência Artificial para o seu negócio.</p>
                 <span class="price-tag">Sob Consulta</span>
-                <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20saber%20mais%20sobre%20IA%20e%20Produtividade." class="btn btn-gold">Explorar IA</a>
+                <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20IA." class="btn btn-gold">Explorar IA</a>
             </div>
 
             <div class="card">
                 <i class="fas fa-graduation-cap"></i>
                 <h3>Acadêmico & ABNT</h3>
-                <p>TCCs, Artigos e Formatação completa conforme normas vigentes.</p>
-                <span class="price-tag">A partir de R$ 50,00</span>
+                <p>TCCs e Artigos formatados com rigor técnico.</p>
+                <span class="price-tag">Desde R$ 50,00</span>
                 <button onclick="openModal('modalAcademico')" class="btn btn-outline">Ver Detalhes</button>
             </div>
 
             <div class="card">
                 <i class="fas fa-file-excel"></i>
-                <h3>Excel & Automação</h3>
-                <p>Dashboards financeiros e automação de processos em massa.</p>
-                <span class="price-tag">A partir de R$ 80,00</span>
+                <h3>Excel & Dashboards</h3>
+                <p>Transforme dados em decisões estratégicas.</p>
+                <span class="price-tag">Desde R$ 80,00</span>
                 <button onclick="openModal('modalExcel')" class="btn btn-outline">Ver Detalhes</button>
             </div>
 
             <div class="card">
                 <i class="fas fa-link"></i>
                 <h3>Presença Digital</h3>
-                <p>Páginas personalizadas em HTML puro para o seu Instagram.</p>
-                <span class="price-tag">A partir de R$ 120,00</span>
+                <p>Sua vitrine no Instagram com design profissional.</p>
+                <span class="price-tag">Desde R$ 120,00</span>
                 <button onclick="openModal('modalDigital')" class="btn btn-outline">Ver Detalhes</button>
             </div>
 
             <div class="card">
                 <i class="fas fa-user-plus"></i>
                 <h3>Onboarding Digital</h3>
-                <p>Manual e processos de integração digital para novos colaboradores.</p>
+                <p>Integração profissional para novos colaboradores.</p>
                 <span class="price-tag">Consultar</span>
-                <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20detalhes%20sobre%20Onboarding%20Digital." class="btn btn-outline">Consultar</a>
+                <a href="https://wa.me/5561995807599" class="btn btn-outline">Consultar</a>
             </div>
         </div>
 
         <div class="section-header reveal">
-            <h2>O que dizem os clientes</h2>
-        </div>
-        <div class="testimonial-grid reveal">
-            <div class="t-item">
-                <p>"Excelente profissional. Minha planilha de gestão financeira ficou perfeita e me economiza horas toda semana."</p>
-                <strong style="display:block; margin-top:15px; color:var(--accent)">— Ricardo A. (Empreendedor)</strong>
-            </div>
-            <div class="t-item">
-                <p>"A formatação do meu TCC foi aprovada sem nenhuma ressalva pela banca. Recomendo muito!"</p>
-                <strong style="display:block; margin-top:15px; color:var(--accent)">— Mariana S. (Graduanda)</strong>
-            </div>
-            <div class="t-item">
-                <p>"O onboarding digital mudou a forma como recebemos novos talentos aqui na empresa."</p>
-                <strong style="display:block; margin-top:15px; color:var(--accent)">— João P. (Gestor de RH)</strong>
-            </div>
-        </div>
-
-        <div class="section-header reveal">
-            <h2>Dúvidas Frequentes</h2>
+            <h2>FAQ</h2>
         </div>
         <div class="faq-container reveal">
             <div class="faq-item">
-                <div class="faq-q">Quais as formas de pagamento? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-a">Trabalho prioritariamente com PIX e Cartão de Crédito. O modelo padrão é 50% de entrada para início do projeto e 50% na entrega final.</div>
+                <div class="faq-q">Formas de pagamento? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-a">PIX e Cartão. Geralmente 50% de entrada e 50% na entrega.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Qual o prazo médio de entrega? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-a">Para formatações ABNT e planilhas simples, o prazo é de 48h a 72h. Projetos de IA e Dashboards complexos são acordados conforme o escopo.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">Você faz correções após a entrega? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-a">Sim! Todos os serviços incluem um período de garantia para ajustes finos sem custo adicional, garantindo sua satisfação total.</div>
+                <div class="faq-q">Prazos de entrega? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-a">A maioria dos serviços é entregue entre 48h e 72h úteis.</div>
             </div>
         </div>
 
         <div class="cta-box reveal">
             <h2 style="color: var(--success);">Pronto para começar?</h2>
-            <p style="margin-top: 10px;">Copie a chave PIX abaixo para agilizar seu pedido ou clique no WhatsApp.</p>
             <div class="pix-area">
                 <span class="pix-code" id="pixCode">71551137194</span>
-                <button onclick="copyPix(this)" style="background:white; color:var(--success); border:none; padding:8px 15px; border-radius:8px; font-weight:700; cursor:pointer; transition: 0.3s;">COPIAR PIX</button>
+                <button onclick="copyPix(this)" style="background:white; color:var(--success); border:none; padding:8px 15px; border-radius:8px; font-weight:700; cursor:pointer;">COPIAR PIX</button>
             </div>
-            <p style="font-size: 0.9rem;">Favorecido: Divino José Silva Mota</p>
+            <p>Favorecido: Divino José Silva Mota</p>
         </div>
     </div>
 
     <div id="modalAcademico" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('modalAcademico')">&times;</span>
-            <div class="section-header">
-                <h2>Consultoria Acadêmica</h2>
-                <p>Especialista em ABNT: Formatação técnica para aprovação garantida.</p>
-            </div>
+            <div class="section-header"><h2>Consultoria Acadêmica</h2></div>
             <div class="modal-grid">
                 <div class="price-card">
                     <h4>Essencial</h4>
                     <div class="price">R$ 50,00</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Formatação Capa/Sumário</li>
-                        <li><i class="fas fa-check"></i> Sumários Automáticos</li>
-                        <li><i class="fas fa-check"></i> Prazo: 72h</li>
-                    </ul>
-                    <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20contratar%20o%20plano%20Acad%C3%AAmico%20Essencial." class="btn btn-outline">Selecionar</a>
+                    <ul><li><i class="fas fa-check"></i> Capa e Sumários</li><li><i class="fas fa-check"></i> Prazo 72h</li></ul>
+                    <a href="https://wa.me/5561995807599" class="btn btn-outline">Contratar</a>
                 </div>
                 <div class="price-card featured-modal">
-                    <div class="badge-modal">RECOMENDADO</div>
+                    <div class="badge-modal">MAIS PEDIDO</div>
                     <h4>Elite Premium</h4>
                     <div class="price">R$ 147,00</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Formatação Completa</li>
-                        <li><i class="fas fa-check"></i> Revisão Gramatical</li>
-                        <li><i class="fas fa-check"></i> Citações e Referências</li>
-                        <li><i class="fas fa-check"></i> Prazo VIP: 48h</li>
-                    </ul>
-                    <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20contratar%20o%20plano%20Acad%C3%AAmico%20Elite%20Premium." class="btn btn-gold">Selecionar Premium</a>
-                </div>
-                <div class="price-card">
-                    <h4>Mentoria Full</h4>
-                    <div class="price">R$ 380,00</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Tudo do Premium</li>
-                        <li><i class="fas fa-check"></i> Relatório de Plágio</li>
-                        <li><i class="fas fa-check"></i> Slides para Defesa</li>
-                    </ul>
-                    <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20contratar%20a%20Mentoria%20Acad%C3%AAmica%20Full." class="btn btn-outline">Selecionar</a>
+                    <ul><li><i class="fas fa-check"></i> Formatação Completa</li><li><i class="fas fa-check"></i> Revisão Gramatical</li><li><i class="fas fa-check"></i> Prazo VIP 48h</li></ul>
+                    <a href="https://wa.me/5561995807599" class="btn btn-gold">Contratar Premium</a>
                 </div>
             </div>
         </div>
@@ -386,42 +334,19 @@
     <div id="modalExcel" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('modalExcel')">&times;</span>
-            <div class="section-header">
-                <h2>Inteligência em Planilhas</h2>
-                <p>Dashboards profissionais que transformam dados em decisões.</p>
-            </div>
+            <div class="section-header"><h2>Excel Inteligente</h2></div>
             <div class="modal-grid">
                 <div class="price-card">
-                    <h4>Planilha Smart</h4>
+                    <h4>Smart</h4>
                     <div class="price">R$ 80,00</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Organização de Dados</li>
-                        <li><i class="fas fa-check"></i> Fórmulas de Cálculo</li>
-                        <li><i class="fas fa-check"></i> 1 Aba de Relatório</li>
-                    </ul>
-                    <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20contratar%20a%20Planilha%20Smart." class="btn btn-outline">Selecionar</a>
+                    <ul><li><i class="fas fa-check"></i> Organização</li><li><i class="fas fa-check"></i> Fórmulas</li></ul>
+                    <a href="https://wa.me/5561995807599" class="btn btn-outline">Contratar</a>
                 </div>
                 <div class="price-card featured-modal">
-                    <div class="badge-modal">ALTO IMPACTO</div>
-                    <h4>Dashboard Pro</h4>
+                    <h4>Pro Dashboard</h4>
                     <div class="price">R$ 297,00</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Painel Interativo</li>
-                        <li><i class="fas fa-check"></i> KPIs Estratégicos</li>
-                        <li><i class="fas fa-check"></i> Automação de Entradas</li>
-                        <li><i class="fas fa-check"></i> Treinamento</li>
-                    </ul>
-                    <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20contratar%20o%20Dashboard%20Pro." class="btn btn-gold">Selecionar Pro</a>
-                </div>
-                <div class="price-card">
-                    <h4>Sistema VBA</h4>
-                    <div class="price">R$ 750+</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Código Personalizado</li>
-                        <li><i class="fas fa-check"></i> Integração com Apps</li>
-                        <li><i class="fas fa-check"></i> Geração de PDF Auto</li>
-                    </ul>
-                    <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20consultar%20sobre%20o%20Sistema%20VBA%20Excel." class="btn btn-outline">Consultar</a>
+                    <ul><li><i class="fas fa-check"></i> Painel Interativo</li><li><i class="fas fa-check"></i> Automação</li></ul>
+                    <a href="https://wa.me/5561995807599" class="btn btn-gold">Contratar</a>
                 </div>
             </div>
         </div>
@@ -430,54 +355,30 @@
     <div id="modalDigital" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('modalDigital')">&times;</span>
-            <div class="section-header">
-                <h2>Presença Digital</h2>
-                <p>Sua vitrine profissional no Instagram veloz e elegante.</p>
-            </div>
+            <div class="section-header"><h2>Presença Digital</h2></div>
             <div class="modal-grid">
                 <div class="price-card">
-                    <h4>Landing Basic</h4>
+                    <h4>Basic</h4>
                     <div class="price">R$ 120,00</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Design Responsivo</li>
-                        <li><i class="fas fa-check"></i> Links de Contato</li>
-                        <li><i class="fas fa-check"></i> Configuração em 24h</li>
-                    </ul>
-                    <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20contratar%20a%20Landing%20Basic." class="btn btn-outline">Selecionar</a>
+                    <ul><li><i class="fas fa-check"></i> Design Responsivo</li><li><i class="fas fa-check"></i> Links</li></ul>
+                    <a href="https://wa.me/5561995807599" class="btn btn-outline">Contratar</a>
                 </div>
                 <div class="price-card featured-modal">
-                    <div class="badge-modal">ESTRUTURA DE VENDAS</div>
-                    <h4>Bio-Elite Gold</h4>
+                    <h4>Elite Gold</h4>
                     <div class="price">R$ 247,00</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Design Premium</li>
-                        <li><i class="fas fa-check"></i> Catálogo Integrado</li>
-                        <li><i class="fas fa-check"></i> WhatsApp/Maps</li>
-                    </ul>
-                    <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20contratar%20o%20Bio-Elite%20Gold." class="btn btn-gold">Selecionar Gold</a>
-                </div>
-                <div class="price-card">
-                    <h4>LP de Vendas</h4>
-                    <div class="price">R$ 550,00</div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Landing Page Completa</li>
-                        <li><i class="fas fa-check"></i> Copy Persuasiva</li>
-                        <li><i class="fas fa-check"></i> Hospedagem 1 Ano</li>
-                    </ul>
-                    <a href="https://wa.me/5561995807599?text=Ol%C3%A1%20Divino!%20Quero%20contratar%20uma%20Landing%20Page%20de%20Vendas." class="btn btn-outline">Selecionar</a>
+                    <ul><li><i class="fas fa-check"></i> Design Premium</li><li><i class="fas fa-check"></i> SEO</li></ul>
+                    <a href="https://wa.me/5561995807599" class="btn btn-gold">Contratar</a>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p><strong>DIVINO JOSÉ SILVA MOTA</strong><br>
-        Brasília - DF | CNPJ: 715.511.371-94<br>
-        <span style="font-size: 0.7rem; opacity: 0.6; display: block; margin-top: 15px;">© 2026 Divino Soluções. Todos os direitos reservados. Garantia de sigilo absoluto sob os dados dos clientes.</span></p>
+        <p><strong>DIVINO JOSÉ SILVA MOTA</strong><br>Brasília - DF | CNPJ: 715.511.371-94</p>
     </footer>
 
     <script>
-        // Animação de Scroll
+        // Revelação no Scroll
         const reveals = document.querySelectorAll('.reveal');
         function reveal() {
             reveals.forEach(el => {
@@ -488,12 +389,9 @@
         window.addEventListener('scroll', reveal);
         window.onload = reveal;
 
-        // Accordion FAQ
+        // FAQ Accordion
         document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', () => { 
-                const item = q.parentElement;
-                item.classList.toggle('active'); 
-            });
+            q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
         });
 
         // Modais
@@ -507,19 +405,17 @@
         }
         window.onclick = function(e) { if (e.target.classList.contains('modal')) { e.target.style.display = 'none'; document.body.style.overflow = 'auto'; } }
 
-        // Função PIX Melhorada
+        // Função de Copiar PIX
         function copyPix(btn) {
-            const pixValue = "71551137194";
-            navigator.clipboard.writeText(pixValue).then(() => {
+            navigator.clipboard.writeText("71551137194").then(() => {
                 const originalText = btn.innerText;
                 btn.innerText = "COPIADO!";
-                btn.style.background = "var(--success)";
+                btn.style.background = "#10B981";
                 btn.style.color = "white";
-                
                 setTimeout(() => {
                     btn.innerText = originalText;
                     btn.style.background = "white";
-                    btn.style.color = "var(--success)";
+                    btn.style.color = "#10B981";
                 }, 2000);
             });
         }
