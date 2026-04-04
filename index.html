@@ -137,7 +137,7 @@
         header {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.8) 100%);
             backdrop-filter: blur(20px);
-            padding: 80px 20px 100px; /* Aumentado o padding para compensar a falta da logo */
+            padding: 60px 20px 80px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -165,36 +165,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             animation: slideUp 0.8s ease 0.1s both;
-            /* Centralização total sem a logo */
-            width: 100%;
         }
-
-        /* .logo-box REMOVIDO conforme solicitado */
 
         .header-text h1 {
             font-family: 'Montserrat', sans-serif;
-            /* clamp ajustado para mobile abrir bem */
-            font-size: clamp(32px, 8vw, 64px); 
+            font-size: clamp(32px, 7vw, 48px);
             font-weight: 900;
             letter-spacing: -1px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             animation: slideUp 0.8s ease 0.2s both;
-            /* Ajuste de linha para mobile */
-            line-height: 1.1;
         }
 
         .header-text p {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-size: 1rem;
             color: var(--accent);
             font-weight: 600;
             letter-spacing: 0.5px;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             animation: slideUp 0.8s ease 0.3s both;
-            /* Melhor legibilidade mobile */
-            padding: 0 10px;
         }
 
         .compliance-badges {
@@ -203,8 +193,6 @@
             justify-content: center;
             flex-wrap: wrap;
             animation: slideUp 0.8s ease 0.4s both;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         .badge {
@@ -231,7 +219,7 @@
         /* ========== CONTAINER & SECTIONS ========== */
         .container {
             max-width: 1200px;
-            margin: -60px auto 80px; /* Ajustado recuo para cima */
+            margin: -50px auto 80px;
             padding: 0 20px;
         }
 
@@ -247,7 +235,7 @@
 
         .section-header h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(28px, 6vw, 42px);
+            font-size: clamp(28px, 5vw, 42px);
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: -0.5px;
@@ -431,7 +419,6 @@
         .process-card:hover::before { transform: scaleX(1); }
         .process-card:hover { border-color: var(--accent); transform: translateY(-8px); background: rgba(30, 41, 59, 0.6); }
 
-        /* Animação de pulso contínuo pros números */
         @keyframes numberPulse {
             0%, 100% { opacity: 0.6; transform: scale(1); filter: drop-shadow(0 0 2px rgba(197, 160, 89, 0.1)); }
             50% { opacity: 1; transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); }
@@ -441,7 +428,6 @@
             font-family: 'Montserrat', sans-serif; 
             font-size: 3.5rem; 
             font-weight: 900; 
-            /* Efeito Vazado */
             color: transparent; 
             -webkit-text-stroke: 1.5px var(--accent);
             margin-bottom: 15px; 
@@ -450,18 +436,16 @@
             animation: numberPulse 3s infinite ease-in-out;
         }
 
-        /* Atrasos diferentes para cada número não piscar junto */
         .process-card:nth-child(1) .process-number { animation-delay: 0s; }
         .process-card:nth-child(2) .process-number { animation-delay: 0.5s; }
         .process-card:nth-child(3) .process-number { animation-delay: 1s; }
 
-        /* Preenchimento e Brilho Neon ao passar o mouse */
         .process-card:hover .process-number {
-            animation: none; /* Para a animação contínua */
-            color: var(--accent); /* Preenche de dourado */
+            animation: none; 
+            color: var(--accent); 
             -webkit-text-stroke: 0px transparent;
-            transform: scale(1.2) translateY(-5px); /* Dá um salto */
-            text-shadow: 0 15px 30px rgba(197, 160, 89, 0.6); /* Brilho forte */
+            transform: scale(1.2) translateY(-5px);
+            text-shadow: 0 15px 30px rgba(197, 160, 89, 0.6);
         }
 
         .process-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; transition: transform 0.3s ease; }
@@ -668,14 +652,12 @@
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .container { margin: -40px auto 60px; }
+            .container { margin: -30px auto 60px; }
             .profile-section { grid-template-columns: 1fr; padding: 30px; gap: 30px; }
             .process-grid, .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); padding: 25px; }
             .trust-grid, .footer-grid { grid-template-columns: repeat(2, 1fr); }
             .cta-buttons { grid-template-columns: 1fr; }
-            /* Garante centralização total no mobile sem logo */
-            .logo-container { flex-direction: column; text-align: center; }
         }
         @media (max-width: 480px) {
             .stats-grid, .trust-grid, .footer-grid { grid-template-columns: 1fr; }
@@ -689,9 +671,9 @@
             <div class="logo-container">
                 <div class="header-text">
                     <h1><span class="text-shine-gold">Divino Soluções</span></h1>
-                    <p>Consultoria Estratégica • Revisão Profissional • Gestão Administrativa</p>
                 </div>
             </div>
+            <p>Consultoria Estratégica • Revisão Profissional • Gestão Administrativa</p>
             <div class="compliance-badges">
                 <span class="badge"><i class="fas fa-shield-alt"></i> Compliance Legal</span>
                 <span class="badge accent"><i class="fas fa-certificate"></i> Suporte Profissional</span>
@@ -986,7 +968,10 @@
                     </div>
                     <div class="faq-body">
                         <p>
-                            Atuamos como <strong>consultores e revisores profissionais</strong>. Analisamos seu trabalho, identificamos pontos de melhoria na estrutura, formatação ABNT/APA, coesão textual e clareza argumentativa. Você recebe um relatório detalhado com sugestões específicas. <strong>O trabalho permanece sendo sua autoria</strong> - você é responsável por implementar as revisões sugeridas. É recomendado assinar digitalmente confirmando a autoria e originalidade própria.
+                            Atuamos como <strong>consultores e revisores profissionais</strong>. Analisamos seu trabalho, identificamos pontos de melhoria 
+                            na estrutura, formatação ABNT/APA, coesão textual e clareza argumentativa. Você recebe um relatório detalhado com sugestões específicas. 
+                            <strong>O trabalho permanece sendo sua autoria</strong> - você é responsável por implementar as revisões sugeridas. 
+                            É recomendado assinar digitalmente confirmando a autoria e originalidade própria.
                         </p>
                     </div>
                 </div>
@@ -998,7 +983,10 @@
                     </div>
                     <div class="faq-body">
                         <p>
-                            <strong>Não.</strong> Consultoria e revisão profissional são práticas legais e comuns em instituições académicas mundiais. Oferecemos <strong>orientação estratégica e sugestões de melhoria</strong>, não geramos trabalhos fraudulentos. A legislação brasileira reconhece consultoria como profissão legítima. Mantemos documentação completa de todos os serviços para transparência total. O cliente é sempre responsável por assegurar a autoria intelectual de seus trabalhos.
+                            <strong>Não.</strong> Consultoria e revisão profissional são práticas legais e comuns em instituições académicas mundiais. 
+                            Oferecemos <strong>orientação estratégica e sugestões de melhoria</strong>, não geramos trabalhos fraudulentos. 
+                            A legislação brasileira reconhece consultoria como profissão legítima. Mantemos documentação completa de todos os serviços para transparência total. 
+                            O cliente é sempre responsável por assegurar a autoria intelectual de seus trabalhos.
                         </p>
                     </div>
                 </div>
@@ -1010,7 +998,9 @@
                     </div>
                     <div class="faq-body">
                         <p>
-                            Não podemos garantir aprovação, pois a decisão final é responsabilidade exclusiva da banca avaliadora e instituição académica. O que garantimos é <strong>revisão profissional rigorosa, conformidade absoluta com normas ABNT/APA e otimização máxima do seu trabalho</strong>. Oferecemos consultoria especializada para aumentar significativamente suas chances de aprovação.
+                            Não podemos garantir aprovação, pois a decisão final é responsabilidade exclusiva da banca avaliadora e instituição académica. 
+                            O que garantimos é <strong>revisão profissional rigorosa, conformidade absoluta com normas ABNT/APA e otimização máxima do seu trabalho</strong>. 
+                            Oferecemos consultoria especializada para aumentar significativamente suas chances de aprovação.
                         </p>
                     </div>
                 </div>
@@ -1022,7 +1012,9 @@
                     </div>
                     <div class="faq-body">
                         <p>
-                            Atendemos clientes em <strong>todo Brasil e internacionalmente</strong> via WhatsApp, Email, Reuniões Online e Documentos Compartilhados. Trabalhamos 100% remoto com máxima qualidade. Não há limitação geográfica para nossos serviços. Você recebe atualizações em tempo real e pode acompanhar todo o processo de consultoria.
+                            Atendemos clientes em <strong>todo Brasil e internacionalmente</strong> via WhatsApp, Email, Reuniões Online e Documentos Compartilhados. 
+                            Trabalhamos 100% remoto com máxima qualidade. Não há limitação geográfica para nossos serviços. 
+                            Você recebe atualizações em tempo real e pode acompanhar todo o processo de consultoria.
                         </p>
                     </div>
                 </div>
@@ -1034,7 +1026,10 @@
                     </div>
                     <div class="faq-body">
                         <p>
-                            Aceitamos <strong>PIX (recomendado), Cartão de Crédito e Transferência Bancária</strong>. Para projetos maiores, oferecemos <strong>parcelamento em até 3x</strong>. A entrada padrão é de 50% para iniciar a consultoria, com segundo pagamento na entrega final. Oferecemos flexibilidade de pagamento conforme sua necessidade.
+                            Aceitamos <strong>PIX (recomendado), Cartão de Crédito e Transferência Bancária</strong>. 
+                            Para projetos maiores, oferecemos <strong>parcelamento em até 3x</strong>. 
+                            A entrada padrão é de 50% para iniciar a consultoria, com segundo pagamento na entrega final. 
+                            Oferecemos flexibilidade de pagamento conforme sua necessidade.
                         </p>
                     </div>
                 </div>
